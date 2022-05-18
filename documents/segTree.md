@@ -7,13 +7,18 @@
 
 ## メモ
 [モノイド](https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%82%A4%E3%83%89)に対して正しくクエリに答えることができる
+
 他にも遅延評価、永続、2D~等似たセグ木ポケモンが多く存在する
+
 TODO: 非再帰verを実装する
 
 ## 使い方
 コンストラクタseg(array, function, elem)
+
 において第一引数が載せたい配列
+
 第二引数が演算(auto f = [](int a, int b){return (a + b);})等
+
 第三引数が単位元(a f elem = aを満たすelem)
 
 seg.updateは可算ではなく代入であることに注意
