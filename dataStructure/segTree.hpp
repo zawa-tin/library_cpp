@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-#include <cassert>
 #include <functional>
 using namespace std;
 // clang-format off
