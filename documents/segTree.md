@@ -34,6 +34,6 @@ seg.updateは可算ではなく代入であることに注意
 ## verify
 [AOJ_DSL2_A](https://onlinejudge.u-aizu.ac.jp/status/users/zawakasu/submissions/1/DSL_2_A/judge/6615886/C++11)
 
-[AOJ_DSL2_B](https://onlinejudge.u-aizu.ac.jp/status/users/zawakasu/submissions/1/DSL_2_B/judge/6615884/C++11)
+[AOJ_DSL2_B](https://onlinejudge.u-aizu.ac.jp/status/users/zawakasu/submissions/1/DSL_2_B/judge/6624212/C++11)
 
 [ABC185-F](https://atcoder.jp/contests/abc185/submissions/31770793)
