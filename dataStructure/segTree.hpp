@@ -18,7 +18,7 @@ private:
     }
 
     void build(vector<T>& input, int elem) {
-        container = vector<T>(2 * n + 1, elem);
+        container = vector<T>(2 * n, elem);
         this->elem = elem;
         for (int i = 0 ; i < input.size() ; i++) container[n + i] = input[i];
         for (int i = n - 1 ; i >= 1 ; i--) container[i] = func(container[2 * i], container[2 * i + 1]);
