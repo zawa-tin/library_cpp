@@ -7,8 +7,11 @@
 
 ## メモ
 [モノイド](https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%82%A4%E3%83%89)に対して正しくクエリに答えることができる
+* a f (b f c) = (a f b) f c
+* a f 0 = aとなる0の存在
 
 他にも遅延評価、永続、2D~等似たセグ木ポケモンが多く存在する
+* セグ木はイーブイ
 
 TODO: 非再帰verを実装する
 
@@ -25,9 +28,12 @@ seg.updateは可算ではなく代入であることに注意
 
 ## 計算量
 初期化O(N)
+
 クエリO(logN)
 
 ## verify
 [AOJ_DSL2_A](https://onlinejudge.u-aizu.ac.jp/status/users/zawakasu/submissions/1/DSL_2_A/judge/6615886/C++11)
+
 [AOJ_DSL2_B](https://onlinejudge.u-aizu.ac.jp/status/users/zawakasu/submissions/1/DSL_2_B/judge/6615884/C++11)
+
 [ABC185-F](https://atcoder.jp/contests/abc185/submissions/31770793)
