@@ -18,4 +18,4 @@ O(Nlog(logN))
 
 ## verify
 
-[https://algo-method.com/submissions/446222](アルゴ式/整数論的アルゴリズム/2章/Q3)
+[アルゴ式/整数論的アルゴリズム/2章/Q3](https://algo-method.com/submissions/446222)
