@@ -15,3 +15,7 @@ isPrimeメソッドでN以下の整数一つが素数かどうかをbool値で�
 
 O(Nlog(logN))
 *素数の逆数和がlog(logN)の早さで発散するかららしい(本当ですか)
+
+## verify
+
+[https://algo-method.com/submissions/446222](アルゴ式/整数論的アルゴリズム/2章/Q3)
