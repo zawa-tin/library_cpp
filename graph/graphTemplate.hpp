@@ -1,4 +1,5 @@
 struct edge {
+    int from;
     int to;
     long long cost;
     bool operator<(const edge& other) const {
