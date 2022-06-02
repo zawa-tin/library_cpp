@@ -1,74 +1,51 @@
 #include <vector>
 #include <queue>
-#include <limits.h>
 using namespace std;
 
 class dijkstra {
 private:
-    const long long sup = LONG_LONG_MAX / 4 - 1;
-    
-    vector<vector<pair<int, int>>> G;
-    vector<vector<pair<int, int>>> MT;
-    vector<pair<int, int>> Medges;
-
+    const long long sup = (1 << 60);
+    using tup = tuple<int, int, int>;
+    vector<vector<tup>> G;
     vector<long long> dist;
-    vector<int> prev;
-    vector<int> used;
+    vector<int> idx;
 
 public:
-    dijkstra(vector<vector<pair<int, int>>>& G) {
-       this->G = G;
-    }
+    dijkstra(vector<vector<tup>>& G) {this->G = G;}
 
-    dijkstra(int n, int m, bool direct) {
-        G = vector<vector<pair<int, int>>>(n);
-
-        for (int _ = 0 ; _ < m ; _++) {
+    dijkstra(int n, int m) {
+        G = vector<vector<tup>>(n);
+        for (int i = 1 ; i <= m ; i++) {
             int u, v, cost; cin >> u >> v >> cost;
-            G[u - 1].emplace_back(make_pair(v - 1, cost));
-            if (direct) continue;
-            G[v - 1].emplace_back(make_pair(u - 1, cost));
+            G[u - 1].emplace_back(make_tuple(v - 1, cost, i));
+            // If you want Undirected, please comment out below this 
+            G[v - 1].emplace_back(make_tuple(u - 1, cost, i));
         }
     }
 
     void build(int s) {
+        using p = pair<long long, int>;
+        priority_queue<p, vector<p>, greater<p>> que;
         dist = vector<long long>(G.size(), sup);
-        prev = vector<int>(G.size(), -1);
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> que;
+        idx = vector<int>(G.size());
         dist[s] = 0;
         que.emplace(make_pair(0, s));
-
-        while(!que.empty()) {
-            pair<int, int> poped = que.top(); que.pop();
-            if (dist[poped.second] > poped.first) continue;
-            for (auto& x : G[poped.second]) {
-                if (dist[x.first] < dist[poped.second] + x.second) {
-                    dist[x.first] = dist[poped.second] + x.second;
-                    que.emplace(make_pair(dist[x.first], x.first));
-                    prev[x.first] = poped.second;
+        
+        while(que.size()) {
+            auto [d, v] = que.top(); que.pop();
+            // if (v == goal) break;
+            if (dist[v] != d) continue;
+            for (auto[x, c, i] : G[v]) {
+                if (dist[x] > dist[v] + c) {
+                    dist[x] = dist[v] + c;
+                    que.emplace(make_pair(dist[x], x));
+                    idx[x] = i;
                 }
             }
         }
     }
-
-    void makeMT() {
-        used = vector<int>(G.size(), 0);
-        MT = vector<vector<pair<int, int>>>(G.size());
-        for (int i = 0 ; i < G.size() ; i++) {
-            if (prev[i] == -1) continue;
-            MT[i].emplace_back(make_pair(prev[i], dist[i] - dist[prev[i]]));
-            MT[prev[i]].emplace_back(make_pair(i, dist[i] - dist[prev[i]]));
-        }
-    }
-
-    long long getDist(int v) {return (dist[v] == sup ? -1 : dist[v]);}
     
-    vector<int> getPath(int v, int s) {
-        vector<int> res;
-        do {
-            res.emplace_back(v);
-            v = prev[v];
-        } while(v != -1 and v != s);
-        return res;
-    }
+    vector<int> getIdx() {return idx;}
+    vector<long long> getDist() {return dist;}
+    long long getDist(int v) {return (dist[v] == sup ? -1 : dist[v]);}
 };
