@@ -1,6 +1,6 @@
 #include <vector>
 #include <algorithm>
-#include "../dataStructure/dsu.hpp""
+#include "../dataStructure/dsu.hpp"
 
 class kruskal {
 private:
