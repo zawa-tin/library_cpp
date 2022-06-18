@@ -5,11 +5,8 @@
 2~Nまでの倍数をfalseにして篩落とすことで最終的に素数が残るだろうというやつ
 
 ## 使い方
-コンストラクタを呼び出すと篩落としが発生する
-
-素数の数はsieve.primes.size()やlower_bound(all(sieve.primes))等を使うと得れる
-
-isPrimeメソッドでN以下の整数一つが素数かどうかをbool値で返す
+vector<int>が関数の返り値です。
+関数の引数に０や負の数をいれてはいけません。
 
 ## 計算量
 
@@ -18,4 +15,4 @@ O(Nlog(logN))
 
 ## verify
 
-[アルゴ式/整数論的アルゴリズム/2章/Q3](https://algo-method.com/submissions/446222)
+[アルゴ式/整数論的アルゴリズム/2章/Q3](https://algo-method.com/submissions/483146)
