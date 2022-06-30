@@ -38,7 +38,7 @@ inline ld p2(ld a) {return a*a;}
 
 // inline bool in(int y, int x) {return 0 <= x and x < w and 0 <= y and y < h;}
 
-const ll supl = 1e18 / 2 - 10000000000;
+const int supl = 1e18 / 2 - 10000000000;
 
 void main_() {
 }
