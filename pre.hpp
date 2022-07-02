@@ -5,6 +5,7 @@
 // #include <atcoder/modint>
 // #include <atcoder/fenwicktree>
 // #include <atcoder/segtree>
+// #include <atcoder/scc>
 
 #define int long long
 #define all(x) begin(x), end(x)
@@ -15,6 +16,11 @@ using namespace std;
 // using mint = modint1000000007;
 using ld = long double;
 using pii = pair<int, int>;
+using vi = vector<int>;
+using vvi = vector<vector<int>>;
+using vvvi = vector<vector<vector<int>>>;
+using vp = vector<pii>
+using vs = vector<string>;
 
 void debug(vector<int> a) {
     for (auto x : a) cout << x << ' ';
@@ -31,14 +37,9 @@ inline bool chmax(T1 &a, T2 b) {return a < b and (a = b, true);}
 template <typename T1, typename T2>
 inline bool chmin(T1 &a, T2 b) {return a > b and (a = b, true);}
 
-inline int ceildiv(int a, int b) {return (a + b - 1) / b;}
-
-inline int p2(int a) {return a*a;}
-inline ld p2(ld a) {return a*a;} 
-
 // inline bool in(int y, int x) {return 0 <= x and x < w and 0 <= y and y < h;}
 
-const int supl = 1e18 / 2 - 10000000000;
+const int supl = 1e18 - 100;
 
 void main_() {
 }
