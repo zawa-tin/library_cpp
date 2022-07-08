@@ -17,10 +17,12 @@ using namespace std;
 using ld = long double;
 using pii = pair<int, int>;
 using vi = vector<int>;
-using vvi = vector<vector<int>>;
-using vvvi = vector<vector<vector<int>>>;
+using vvi = vector<vi>;
+using vvvi = vector<vvi>;
 using vp = vector<pii>
+using vvp = vector<vp>;
 using vs = vector<string>;
+using vvc = vector<vector<char>>;
 
 void debug(vector<int> a) {
     for (auto x : a) cout << x << ' ';
@@ -37,9 +39,7 @@ inline bool chmax(T1 &a, T2 b) {return a < b and (a = b, true);}
 template <typename T1, typename T2>
 inline bool chmin(T1 &a, T2 b) {return a > b and (a = b, true);}
 
-// inline bool in(int y, int x) {return 0 <= x and x < w and 0 <= y and y < h;}
-
-const int supl = 1e18 - 100;
+const int supl = LONG_LONG_MAX - 100;
 
 void main_() {
 }
