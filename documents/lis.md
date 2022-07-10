@@ -15,7 +15,10 @@ long long型の一次元vectorを参照します。
 
 ## 挙動
 DP
+にぶたん
 
+## 計算量
+配列の長さNに対してO(NlogN)
 
 ## verify
 
