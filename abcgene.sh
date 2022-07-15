@@ -13,6 +13,10 @@ else
     cd ../atcoder/ABC2
 fi
 
+if [ -d "./ABC${id}" ]; then
+    return 0
+fi
+
 mkdir ABC${id}
 cd ABC${id}
 
