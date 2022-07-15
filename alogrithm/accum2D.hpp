@@ -23,7 +23,7 @@ namespace zawa {
         void build() {
             for (int i = 0 ; i < container.size() ; i++) {
                 for (int j = 0 ; j < container[i].size() ; j++) {
-                    accum[i + 1][j + 1] = accum[i][j] + accum[i + 1][j] - accum[i][j] + container[i][j];
+                    accum[i + 1][j + 1] = accum[i][j + 1] + accum[i + 1][j] - accum[i][j] + container[i][j];
                 }
             }
         }
@@ -34,6 +34,13 @@ namespace zawa {
 
         int query(std::pair<int, int> p1, std::pair<int, int> p2) {
             return query(p1.first, p1.second, p2.first, p2.second);
+        }
+
+        void print() {
+            for (auto y : accum) {
+                for (auto x : y) cout << x << ' ';
+                cout << endl;
+            }
         }
     };
 }
